@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Aplicacion para administrar tareas</h1>
+
+<h2>Listado de Asignaturas</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Area</th>
+      <th>Day</th>
+      <th>Hour</th>
+      <th>Estudiante</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @asignaturas.each do |asignatura| %>
+
+      <tr>
+        <td><%= asignatura.name %></td>
+        <td><%= asignatura.code %></td>
+        <td><%= asignatura.area %></td>
+        <td><%= asignatura.day %></td>
+        <td><%= asignatura.hour %></td>
+        <td>
+          <ul>
+      <% asignatura.estudiantes.each do |estudiante| %>
+      <li><%= estudiante.name %></li>
+    <% end %>
+    </ul>
+        </td>
+        <td><%= link_to 'Show', asignatura %></td>
+        <td><%= link_to 'Edit', edit_asignatura_path(asignatura) %></td>
+        <td><%= link_to 'Destroy', asignatura, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+      </tr>
+
+    
+    
+<% end %>
+    
+  </tbody>
+</table>
+
+<br>
+
+
+
+<%= link_to 'New Asignatura', new_asignatura_path %>
+
+    
+
+

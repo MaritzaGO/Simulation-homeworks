@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @asignatura.name %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @asignatura.code %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @asignatura.area %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @asignatura.day %>
+</p>
+
+<p>
+  <strong>Hour:</strong>
+  <%= @asignatura.hour %>
+</p>
+
+<%= link_to 'Edit', edit_asignatura_path(@asignatura) %> |
+<%= link_to 'Back', asignaturas_path %>

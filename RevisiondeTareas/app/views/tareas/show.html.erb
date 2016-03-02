@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Enunciado:</strong>
+  <%= @tarea.enunciado %>
+</p>
+
+<p>
+  <strong>Tematica:</strong>
+  <%= @tarea.tematica %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @tarea.fecha %>
+</p>
+
+<p>
+  <strong>Hour:</strong>
+  <%= @tarea.hour %>
+</p>
+
+<%= link_to 'Edit', edit_tarea_path(@tarea) %> |
+<%= link_to 'Back', tareas_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @respuestum.message %>
+</p>
+
+<p>
+  <strong>Calificacion:</strong>
+  <%= @respuestum.calificacion %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @respuestum.fecha %>
+</p>
+
+<p>
+  <strong>Hour:</strong>
+  <%= @respuestum.hour %>
+</p>
+
+<%= link_to 'Edit', edit_respuestum_path(@respuestum) %> |
+<%= link_to 'Back', respuesta_path %>
