@@ -1,5 +1,8 @@
 <%= form_for(@tarea) do |f| %>
+
   <% if @tarea.errors.any? %>
+
+
     <div id="error_explanation">
       <h2><%= pluralize(@tarea.errors.count, "error") %> prohibited this tarea from being saved:</h2>
 
@@ -19,6 +22,12 @@
     <%= f.label :tematica %><br>
     <%= f.text_field :tematica %>
   </div>
+
+  <div class="field">
+    <%= f.label :archivo %><br>
+    <%= f.file_field :archivo %>
+  </div>
+
   <div class="field">
     <%= f.label :fecha %><br>
     <%= f.date_select :fecha %>
@@ -27,6 +36,7 @@
     <%= f.label :hour %><br>
     <%= f.time_select :hour %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

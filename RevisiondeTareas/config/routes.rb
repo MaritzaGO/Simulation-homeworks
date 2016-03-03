@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 
   root 'asignaturas#index'
 
+  get '/estudiantes/:estudiante_id/tareas', to: "tareas#by_estudiante", as: :mostrar_tareas
+
+#dos puntos: es parametro dinamico.
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302195042) do
+ActiveRecord::Schema.define(version: 20160303213556) do
 
   create_table "asignaturas", force: :cascade do |t|
     t.string   "name"
@@ -48,8 +48,9 @@ ActiveRecord::Schema.define(version: 20160302195042) do
     t.string   "lastname"
     t.string   "asignatura"
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "identificacion"
   end
 
   create_table "respuesta", force: :cascade do |t|
@@ -61,6 +62,9 @@ ActiveRecord::Schema.define(version: 20160302195042) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "respuesta_tareas", force: :cascade do |t|
+  end
+
   create_table "tareas", force: :cascade do |t|
     t.text     "enunciado"
     t.string   "tematica"
@@ -68,6 +72,10 @@ ActiveRecord::Schema.define(version: 20160302195042) do
     t.time     "hour"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "archivo"
+  end
+
+  create_table "tareas_estudiantes", force: :cascade do |t|
   end
 
 end

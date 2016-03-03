@@ -11,6 +11,11 @@
 </p>
 
 <p>
+  <strong>Archivo subido:</strong> 
+  <%= @tarea.archivo %>
+</p>
+
+<p>
   <strong>Fecha:</strong>
   <%= @tarea.fecha %>
 </p>
@@ -19,6 +24,10 @@
   <strong>Hour:</strong>
   <%= @tarea.hour %>
 </p>
+
+
+
+
 
 <%= link_to 'Edit', edit_tarea_path(@tarea) %> |
 <%= link_to 'Back', tareas_path %>

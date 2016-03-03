@@ -1,1 +1,1 @@
-json.extract! @asignatura, :id, :name, :code, :area, :day, :hour, :created_at, :updated_at
+json.extract! @asignatura, :id, :code, :name, :area, :day, :hour, :created_at, :updated_at

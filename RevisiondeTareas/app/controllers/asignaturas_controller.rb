@@ -70,6 +70,6 @@ class AsignaturasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def asignatura_params
-      params.require(:asignatura).permit(:name, :code, :area, :day, :hour)
+      params.require(:asignatura).permit(:code, :name, :area, :day, :hour)
     end
 end

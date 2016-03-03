@@ -27,7 +27,14 @@ class RespuestaController < ApplicationController
     @respuestum = Respuestum.new(respuestum_params)
 
     respond_to do |format|
+
       if @respuestum.save
+          uploaded_io = params[:respuesta][:respuestatarea]
+          File.open(Rails.root.join("public", "tareas_recibidas", uploaded_io.original_filename), 'wb') do |file|
+            file.write uploaded_io.read
+          end
+
+
         format.html { redirect_to @respuestum, notice: 'Respuestum was successfully created.' }
         format.json { render :show, status: :created, location: @respuestum }
       else

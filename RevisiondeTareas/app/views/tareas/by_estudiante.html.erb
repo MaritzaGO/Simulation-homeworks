@@ -1,0 +1,21 @@
+
+<h1>Tareas asignadas por estudiante</h1>
+
+<% if @estudiante.tareas.length > 0 %>
+	<% @estudiante.tareeas.each do |tarea| %>
+	<li>
+		<%= tarea.name %>
+	</li>
+<% end %>
+
+<% else %>
+
+<h2>No tienes tareas asignadas <%= link_to "Consultar tareas proximas de asignacion", edit_estudiante_path(@estudiante) %></h2>
+<% end %>
+
+<%= link_to "Volver a panel central de estudiantes", estudiantes_path %>
+
+
+
+
+

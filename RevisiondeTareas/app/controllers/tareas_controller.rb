@@ -21,13 +21,24 @@ class TareasController < ApplicationController
   def edit
   end
 
+  def by_estudiante
+  @estudiante= Estudiante.find(param [:estudiante_id])
+  end
+
+
   # POST /tareas
   # POST /tareas.json
   def create
     @tarea = Tarea.new(tarea_params)
+    @tarea.save
+    redirect_to tareas_path
 
     respond_to do |format|
-      if @tarea.save
+        if @tarea.save
+        uploaded_io = params[:tarea][:archivo]
+          File.open(Rails.root.join("public", "archivos_guias", uploaded_io.original_filename), 'wb') do |file|
+          file.write uploaded_io.read
+        end
         format.html { redirect_to @tarea, notice: 'Tarea was successfully created.' }
         format.json { render :show, status: :created, location: @tarea }
       else
@@ -35,6 +46,7 @@ class TareasController < ApplicationController
         format.json { render json: @tarea.errors, status: :unprocessable_entity }
       end
     end
+    
   end
 
   # PATCH/PUT /tareas/1
@@ -69,6 +81,6 @@ class TareasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tarea_params
-      params.require(:tarea).permit(:enunciado, :tematica, :fecha, :hour)
+      params.require(:tarea).permit(:enunciado, :tematica, :archivo, :fecha, :hour)
     end
 end

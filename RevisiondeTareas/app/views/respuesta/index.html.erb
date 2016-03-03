@@ -1,11 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Respuesta</h1>
+<h1>Listado de Respuesta a las tareas</h1>
 
 <table>
   <thead>
     <tr>
       <th>Message</th>
+      <th>Respuesta a Tarea</th>
       <th>Calificacion</th>
       <th>Fecha</th>
       <th>Hour</th>
@@ -18,6 +19,7 @@
       <tr>
         <td><%= respuestum.message %></td>
         <td><%= respuestum.calificacion %></td>
+        <td><%= respuestum.respuestatarea %></td>
         <td><%= respuestum.fecha %></td>
         <td><%= respuestum.hour %></td>
         <td><%= link_to 'Show', respuestum %></td>

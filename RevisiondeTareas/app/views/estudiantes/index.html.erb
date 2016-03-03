@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Estudiantes</h1>
+<h1>Listado de Estudiantes</h1>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Lastname</th>
+      <th>Identificacion</th>
       <th>Asignatura</th>
       <th>Email</th>
       <th>Edad</th>
@@ -20,10 +21,15 @@
       <tr>
         <td><%= estudiante.name %></td>
         <td><%= estudiante.lastname %></td>
+        <td><%= estudiante.identificacion %></td>
         <td><%= estudiante.asignatura %></td>
         <td><%= estudiante.email %></td>
         <td><%= estudiante.edad %></td>
         <td><%= estudiante.gender %></td>
+
+        <%= link_to "Ver tareas asignadas", mostrar_tareas_path(estudiante) %>
+
+
         <td><%= link_to 'Show', estudiante %></td>
         <td><%= link_to 'Edit', edit_estudiante_path(estudiante) %></td>
         <td><%= link_to 'Destroy', estudiante, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -32,6 +38,27 @@
   </tbody>
 </table>
 
+
+<h2>Busqueda de estudiantes</h2>
+
+<ul>
+  <% @estudiantes3.each do |estudiante| %>
+    <li class="estudiante">
+      <span class="estudiante-name"><%= estudiante.name %></span>
+    </li>
+  <% end %>
+</ul>
+
+<%= form_tag "/estudiantes", method: :get do |f| %>
+  
+  <% label_tag "Nombre" %>
+  <% text_field_tag :name %>
+  <%= submit_tag "Buscar" %>
+  
+  <% end%>
+
+
+
 <br>
 
-<%= link_to 'New Estudiante', new_estudiante_path %>
+<%= link_to 'Agregar nuevo Estudiante', new_estudiante_path %>
