@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160303213556) do
+ActiveRecord::Schema.define(version: 20160304205123) do
 
   create_table "asignaturas", force: :cascade do |t|
     t.string   "name"
@@ -60,9 +60,6 @@ ActiveRecord::Schema.define(version: 20160303213556) do
     t.time     "hour"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-  end
-
-  create_table "respuesta_tareas", force: :cascade do |t|
   end
 
   create_table "tareas", force: :cascade do |t|

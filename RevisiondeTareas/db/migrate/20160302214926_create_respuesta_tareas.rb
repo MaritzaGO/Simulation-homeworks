@@ -4,8 +4,6 @@ class CreateRespuestaTareas < ActiveRecord::Migration
     	
     	t.integer :respuesta_id, index:true
     	t.integer :tarea_id, index:true
-
-
     end
   end
 end

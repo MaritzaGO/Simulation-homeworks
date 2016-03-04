@@ -34,7 +34,7 @@ class EstudiantesController < ApplicationController
     if @estudiante.save
       redirect_to estudiantes_path
     else
-      redirect_to estudiantes_path, alert: "Error: #{@student.errors.full_messages.join(" ")}"
+      redirect_to estudiantes_path, alert: "Error: #{@estudiante.errors.full_messages.join(" ")}"
     end
 
 
@@ -55,7 +55,7 @@ class EstudiantesController < ApplicationController
 
     @estudiante = Estudiante.find(params[:id])
     @estudiante.update_attributes(estudiante_params)
-    redirect_to mostrar_materias_path(@estudiante)
+    
 
     respond_to do |format|
       if @estudiante.update(estudiante_params)
@@ -89,6 +89,6 @@ class EstudiantesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def estudiante_params
-      params.require(:estudiante).permit(:name, :lastname, :identificacion, :email, :edad, :gender, { tareas_ids: [] }, { asignaturas_ids: [] } )
+      params.require(:estudiante).permit(:name, :lastname, :identificacion, :asignatura, :email, :edad, :gender, { tareas_ids: [] }, { asignaturas_ids: [] } )
     end
 end

@@ -6,3 +6,4 @@ class CreateTareasEstudiantes < ActiveRecord::Migration
     end
   end
 end
+

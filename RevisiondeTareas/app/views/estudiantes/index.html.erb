@@ -27,12 +27,14 @@
         <td><%= estudiante.edad %></td>
         <td><%= estudiante.gender %></td>
 
-        <%= link_to "Ver tareas asignadas", mostrar_tareas_path(estudiante) %>
+        
 
 
         <td><%= link_to 'Show', estudiante %></td>
         <td><%= link_to 'Edit', edit_estudiante_path(estudiante) %></td>
         <td><%= link_to 'Destroy', estudiante, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <td><%= link_to "Ver tareas asignadas", mostrar_tareas_path(estudiante) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -41,6 +43,16 @@
 
 <h2>Busqueda de estudiantes</h2>
 
+
+<%= form_tag "/estudiantes", method: :get do |f| %>
+  
+  <%= label_tag "Nombre" %>
+  <%= text_field_tag :name %>
+  <%= submit_tag "Buscar" %>
+  
+  <% end%>
+
+
 <ul>
   <% @estudiantes3.each do |estudiante| %>
     <li class="estudiante">
@@ -48,15 +60,6 @@
     </li>
   <% end %>
 </ul>
-
-<%= form_tag "/estudiantes", method: :get do |f| %>
-  
-  <% label_tag "Nombre" %>
-  <% text_field_tag :name %>
-  <%= submit_tag "Buscar" %>
-  
-  <% end%>
-
 
 
 <br>
