@@ -1,1 +1,1 @@
-json.extract! @estudiante, :id, :name, :lastname, :identificacion, :asignatura, :email, :edad, :gender, :created_at, :updated_at
+json.extract! @estudiante, :id, :name, :lastname, :identificacion, :asignaturas_ids, :email, :edad, :gender, :created_at, :updated_at

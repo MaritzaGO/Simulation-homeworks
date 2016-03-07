@@ -5,7 +5,7 @@ class EstudiantesController < ApplicationController
   # GET /estudiantes.json
   def index
     @estudiantes = Estudiante.all
-    @estudiantes3 = @estudiantes.where("name LIKE ?", "%#{params[:name]}%")
+    @estudiantes2 = @estudiantes.where("name LIKE ?", "%#{params[:name]}%")
   end
 
   # GET /estudiantes/1
@@ -89,6 +89,6 @@ class EstudiantesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def estudiante_params
-      params.require(:estudiante).permit(:name, :lastname, :identificacion, :asignatura, :email, :edad, :gender, { tareas_ids: [] }, { asignaturas_ids: [] } )
+      params.require(:estudiante).permit(:name, :lastname, :identificacion, { asignaturas_ids: [] }, :email, :edad, :gender, { tareas_ids: [] })
     end
 end
