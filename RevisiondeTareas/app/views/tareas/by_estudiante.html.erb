@@ -10,7 +10,7 @@
 
 <% else %>
 
-<h2>No tienes tareas asignadas <%= link_to "Consultar tareas proximas de asignacion", edit_estudiante_path(@estudiante) %></h2>
+<h2>No tienes tareas asignadas <%= link_to "Consultar tareas proximas de asignacion", new_tarea_path %></h2>
 <% end %>
 
 <%= link_to "Volver a panel central de estudiantes", estudiantes_path %>

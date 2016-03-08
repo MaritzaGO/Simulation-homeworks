@@ -22,7 +22,7 @@ class TareasController < ApplicationController
   end
 
   def by_estudiante
-  @estudiante= Estudiante.find(param [:estudiante_id])
+  @estudiante= Estudiante.find(params[:estudiante_id])
   end
 
 

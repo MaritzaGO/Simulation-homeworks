@@ -17,7 +17,11 @@
 
 <p>
   <strong>Asignatura(s):</strong>
-  <%= @estudiante.asignaturas_ids %>
+  <ul>
+  <% @estudiante.asignaturas.each do |a| %>
+    <li><%= a.name %></li>
+  <% end %>
+  </ul>
 </p>
 
 <p>
